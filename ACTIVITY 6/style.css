@@ -1,15 +1,17 @@
 #icon {
     border-style:double;
     border-color:black;
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: px;
 }
     
+div h1 {
+    display: inline-block;
+    position:fixed;
+}
 * {
     background-image:url(./background.png);
-    background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
     color: white;
     font-family:'Times New Roman', Times, serif;
 }
