@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendify</title>
+    <style>
+      body {
+        margin: 0px;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      #icon {
+        width: 90px;
+        height: 90px;
+        margin: 15px;
+        transition: transform 0.5s;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #800000;
+      }
+
+      #log_in,
+      #sign_up {
+        border-radius: 50px;
+        padding: 15px;
+        background-color: #ffa500;
+        border: none;
+        font-size: 25px;
+        font-weight: bolder;
+        width: 150px;
+        margin-right: 100px;
+        transition: background-color 0.5s;
+      }
+
+      #log_in {
+        margin-right: 50px;
+      }
+
+      .orange img {
+        width: 100%;
+        height: 15px;
+      }
+
+      #log_in:hover,
+      #sign_up:hover,
+      #icon:hover {
+        color: white;
+        background-color: black;
+        transform: scale(1.1);
+      }
+
+      #g_picture {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        margin: auto;
+        margin-left: 40px;
+        margin-top: 30px;
+      }
+
+      .hover-text {
+        position: absolute;
+        top: 82%;
+        left: 13%;
+        transform: translate(-50%, -50%);
+        background-color: #800000;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        height: 150px;
+      }
+
+      #g_picture:hover .hover-text:hover {
+        display: block;
+      }
+
+      #group_name {
+        background-color: #800000;
+        color: white;
+        font-weight: normal;
+        border-radius: 10px;
+        text-align: center;
+        width: 880px;
+        height: 65px;
+        font-size: 55px;
+        margin-left: 400px;
+        margin-top: -200px;
+      }
+
+      .digital_dynasty {
+        margin-left: 0px;
+        margin-right: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img id="icon" src="./images/icon.png" />
+      <div class="buttons">
+        <button type="button" id="log_in">LOG IN</button>
+        <button type="button" id="sign_up">SIGN UP</button>
+      </div>
+    </div>
+
+    <div class="orange">
+      <img src="./images/orange.jpg" />
+    </div>
+
+    <div class="digital-dynasty">
+      <img id="g_picture" src="./images/gpicture.jpg" />
+      <div class="hover-text">Lagyan n'yo ng description to</div>
+    </div>
+    <div>
+      <h1 id="group_name">DIGITAL DYNASTY ATTENDIFY</h1>
+    </div>
+  </body>
+</html>
