@@ -30,10 +30,10 @@
       .form-container {
         position: relative;
         z-index: 1;
-        padding: 20px;
+        padding: 65px;
         background: #F3EFD0;
         border-radius: 10px;
-        max-width: 700px;
+        max-width: 900px;
         margin: 100px auto;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         font-weight: bolder;
@@ -44,20 +44,23 @@
       .form-container h1 {
         background-color: #800000;
         color: white;
-        padding: 10px;
+        padding: 20px;
         margin: -20px -20px 20px -20px;
         border-radius: 10px 10px 0 0;
       }
 
       .form {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas:
+          "first first middle middle last last last last last last last last"
+          "birthday birthday birthday birthday age age gender gender gender gender gender gender"
+          "address address address address address address address address address address address address"
+          "email email email email phone phone phone phone phone phone phone phone"
+          "password password password password confirm confirm confirm confirm confirm confirm confirm confirm"
+          ". button button button button button button button button button button .";
         grid-gap: 15px;
-      }
-
-      .form div {
-        display: flex;
-        flex-direction: column;
+        align-items: center;
       }
 
       .form input,
@@ -71,12 +74,15 @@
       }
 
       .form button {
-        grid-column: span 3;
         border: none;
         background-color: #e69b00;
         color: black;
         font-size: 18px;
         cursor: pointer;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        grid-area: button;
       }
 
       .form button:hover {
@@ -84,17 +90,48 @@
         color: black;
       }
 
-      .form .full-width {
-        grid-column: span 3;
+      .form .first {
+        grid-area: first;
       }
 
-      .form .row {
-        display: flex;
-        gap: 15px;
+      .form .middle {
+        grid-area: middle;
       }
 
-      .form .row div {
-        flex: 1;
+      .form .last {
+        grid-area: last;
+      }
+
+      .form .birthday {
+        grid-area: birthday;
+      }
+
+      .form .age {
+        grid-area: age;
+      }
+
+      .form .gender {
+        grid-area: gender;
+      }
+
+      .form .address {
+        grid-area: address;
+      }
+
+      .form .email {
+        grid-area: email;
+      }
+
+      .form .phone {
+        grid-area: phone;
+      }
+
+      .form .password {
+        grid-area: password;
+      }
+
+      .form .confirm {
+        grid-area: confirm;
       }
 
     </style>
@@ -103,35 +140,199 @@
     <div class="form-container">
       <h1>Sign up</h1>
       <form class="form">
-        <input type="text" placeholder="First Name" required />
-        <input type="text" placeholder="Middle Name" />
-        <input type="text" placeholder="Last Name" required />
-        <div class="row full-width">
-          <div>
-            <label for="birthday">Birthday</label>
-            <input type="date" id="birthday" name="birthday" required />
-          </div>
-          <div>
-            <input type="number" placeholder="Age" required />
-          </div>
-          <div>
-            <label for="gender">Gender</label>
-            <select name="gender" id="gender" required>
-              <option value="">--/--</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-          </div>
+        <input type="text" placeholder="First Name" required class="first" />
+        <input type="text" placeholder="Middle Name" class="middle" />
+        <input type="text" placeholder="Last Name" required class="last" />
+        <div class="birthday">
+          <label for="birthday">Birthday</label>
+          <input type="date" id="birthday" name="birthday" required />
         </div>
-        <input type="text" placeholder="Address" class="full-width" required />
-        <div class="row full-width">
-          <input type="email" placeholder="Email" required />
-          <input type="number" placeholder="Phone" required />
+        <div class="age">
+          <input type="number" placeholder="Age" required />
         </div>
-        <div class="row full-width">
-          <input type="password" placeholder="Password" required />
-          <input type="password" placeholder="Confirm Password" required />
+        <div class="gender">
+          <label for="gender">Gender</label>
+          <select name="gender" id="gender" required>
+            <option value="">--/--</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
         </div>
+        <input type="text" placeholder="Address" class="address" required />
+        <input type="email" placeholder="Email" required class="email" />
+        <input type="number" placeholder="Phone" required class="phone" />
+        <input type="password" placeholder="Password" required class="password" />
+        <input type="password" placeholder="Confirm Password" required class="confirm" />
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(./images/441999655_1543708003210530_498327479394391954_n.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        opacity: 0.5;
+        z-index: -1;
+      }
+
+      .form-container {
+        position: relative;
+        z-index: 1;
+        padding: 65px;
+        background: #F3EFD0;
+        border-radius: 10px;
+        max-width: 900px;
+        margin: 100px auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-weight: bolder;
+        text-align: center;
+        border-radius: 10%;
+      }
+
+      .form-container h1 {
+        background-color: #800000;
+        color: white;
+        padding: 20px;
+        margin: -20px -20px 20px -20px;
+        border-radius: 10px 10px 0 0;
+      }
+
+      .form {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr) 150px;
+        grid-template-areas:
+          "first first first middle middle middle last last last last"
+          "birthday birthday birthday age  age age gender gender gender"
+          "address address address address address address address address address address"
+          "email email email email phone phone phone phone phone phone"
+          "password password password password confirm confirm confirm confirm confirm confirm"
+          ". button button button button button button button button .";
+        grid-gap: 15px;
+        align-items: center;
+      }
+
+      .form input,
+      .form select,
+      .form button {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .form button {
+        border: none;
+        background-color: #e69b00;
+        color: black;
+        font-size: 18px;
+        cursor: pointer;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        grid-area: button;
+      }
+
+      .form button:hover {
+        background-color: #e6cc00;
+        color: black;
+      }
+
+      .form .first {
+        grid-area: first;
+      }
+
+      .form .middle {
+        grid-area: middle;
+      }
+
+      .form .last {
+        grid-area: last;
+      }
+
+      .form .birthday {
+        grid-area: birthday;
+      }
+
+      .form .age {
+        grid-area: age;
+      }
+
+      .form .gender {
+        grid-area: gender;
+      }
+
+      .form .address {
+        grid-area: address;
+      }
+
+      .form .email {
+        grid-area: email;
+      }
+
+      .form .phone {
+        grid-area: phone;
+      }
+
+      .form .password {
+        grid-area: password;
+      }
+
+      .form .confirm {
+        grid-area: confirm;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Sign up</h1>
+      <form class="form">
+        <input type="text" placeholder="First Name" required class="first" />
+        <input type="text" placeholder="Middle Name" class="middle" />
+        <input type="text" placeholder="Last Name" required class="last" />
+        <div class="birthday">
+          <label for="birthday">Birthday</label>
+          <input type="date" id="birthday" name="birthday" required />
+        </div>
+        <div class="age">
+          <input type="number" placeholder="Age" required />
+        </div>
+        <div class="gender">
+          <label for="gender" >Gender</label>
+          <select name="gender" id="gender" required>
+            <option value="">-----/-----</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <input type="text" placeholder="Address" class="address" required />
+        <input type="email" placeholder="Email" required class="email" />
+        <input type="number" placeholder="Phone" required class="phone" />
+        <input type="password" placeholder="Password" required class="password" />
+        <input type="password" placeholder="Confirm Password" required class="confirm" />
         <button type="submit">Sign Up</button>
       </form>
     </div>
