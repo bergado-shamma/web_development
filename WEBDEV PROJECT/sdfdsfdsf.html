@@ -1,112 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
-    <style>
-      body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        position: relative;
-      }
-
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url(./images/classroom.jpeg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
-        opacity: 0.5;
-        z-index: -1;
-      }
-
-      .form {
-        position: relative;
-        z-index: 1;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 10px;
-        max-width: 400px;
-        margin: 100px auto;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        font-weight: bolder;
-        text-align: center;
-        border-radius: 10%;
-      }
-
-      .form h1 {
-        background-color: #800000;
-        color: white;
-        padding: 10px;
-        margin-top: -20px;
-        margin-bottom: 50px;
-      }
-
-      .form form {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        height: 350px;
-        
-      }
-
-      .form input {
-        margin-bottom: 15px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 16px;
-      }
-
-      .form button {
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        background-color: #e69b00;
-        color: black;
-        font-size: 18px;
-        cursor: pointer;
-        padding: 10px;
-        margin-top: 20px;
-        margin-bottom: -40px;
-      }
-
-      .form button:hover {
-        background-color: #e6cc00;
-        color: black;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="form">
-      <form>
-        <h1>SIGN UP FORM</h1>
-        <input type="text" id="f_name" placeholder="First Name">
-        <input type="text" id="m_name" placeholder="Middle Name">
-        <input type="text" id="l_name" placeholder="Last Name">
-        <input type="datetime" id="bday" placeholder="Birthday">
-        <input type="number" id="age" placeholder="Age">
-        <select id="gender">
-          <option value="female">Female</option>
-          <option value="male">Male</option>
-        </select>
-        <label id="address">Type your address here</label>
-        <textarea name="address" id="address">
-        </textarea>
-        <input type="email" id="email" placeholder="Email">
-        <input type="number" id="c_number" placeholder="Contact Number">
-        <input type="password" id="password" placeholder="Password">
-        <input type="password" id="confirm_password" placeholder="Confirm Password">
-        <button type="submit" id="sign_up" value="sign_up">Sign Up</button>
-      </form>
-    </div>
-  </body>
-</html> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+    <link rel="stylesheet" href="./studentinfo_styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+        </nav>
+        <div class="gold-line"></div>
+    </header>
+    <main>
+        <div class="greeting">
+            <h1>Hello, John Doe</h1>
+        </div>
+        <div class="container">
+            <div id="name">Name: John Doe</div>
+            <div id="gender">Gender: Male</div>
+            <div id="email">Email: johndoe@example.com</div>
+            <div id="section">Section: A1</div>
+            <div id="studentnumber">Student Number: 123456</div>
+            <div id="contactnumber">Contact Number: 123-456-7890</div>
+        </div>
+    </main>
+</body>
+</html>
